@@ -1,3 +1,7 @@
+### 0.0.5
+
+* update musl to 1.2.5
+
 ### 0.0.4
 
 * update to musl 1.2.4

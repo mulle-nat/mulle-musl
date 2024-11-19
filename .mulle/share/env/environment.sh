@@ -41,7 +41,7 @@ case "${MULLE_SHELL_MODE}" in
          ;;
 
          *\\h*)
-            PS1="$(sed 's/\\h/\\h\['${envname}'\]/' <<< "${PS1}" )"
+            PS1="$( PATH=/bin:/usr/bin sed 's/\\h/\\h\['${envname}'\]/' <<< "${PS1}" )"
          ;;
 
          *)
@@ -82,7 +82,7 @@ case "${MULLE_SHELL_MODE}" in
       unset FILENAME
 
       vardir="${MULLE_VIRTUAL_ROOT}/.mulle/var/${MULLE_HOSTNAME:-unknown-host}"
-      [ -d "${vardir}" ] || mkdir -p "${vardir}"
+      [ -d "${vardir}" ] || PATH=/bin:/usr/bin mkdir -p "${vardir}"
 
       HISTFILE="${vardir}/bash_history"
       export HISTFILE
